@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
         const SizedBox(
           height: 30,
         ),
-        TextButton(
+        OutlinedButton(
           onPressed: () {},
           child: const Text(
             'Start quiz',
