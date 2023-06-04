@@ -8,13 +8,6 @@ class HomeScreen extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Opacity(
-        //   opacity: 0.45,
-        //   child: Image.asset(
-        //     'assets/images/quiz-logo.png',
-        //     width: 300,
-        //   ),
-        // ),
         Image.asset(
           'assets/images/quiz-logo.png',
           width: 300,
@@ -36,15 +29,13 @@ class HomeScreen extends StatelessWidget {
         OutlinedButton.icon(
           onPressed: () {},
           style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.white,
-              side: const BorderSide(
-                width: 1.8,
-                color: Colors.white,
-                strokeAlign: 6,
-              ),
-              padding: const EdgeInsets.all(
-                3,
-              )),
+            foregroundColor: Colors.white,
+            side: const BorderSide(
+              width: 1.8,
+              color: Colors.white,
+              strokeAlign: 6,
+            ),
+          ),
           icon: const Icon(Icons.arrow_right_alt),
           label: const Text(
             'Start Quiz',
