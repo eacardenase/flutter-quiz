@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_quiz/gradient_container.dart';
+import 'package:flutter_quiz/home_screen.dart';
+import 'package:flutter_quiz/questions_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({
@@ -14,15 +16,24 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  Widget activeScreen = const HomeScreen();
+
+  void switchScreen() {
+    setState(() {
+      activeScreen = const QuestionsScreen();
+    });
+  }
+
   @override
   Widget build(context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
         body: GradientContainer(
-          gradientColors: [
+          gradientColors: const [
             Colors.indigoAccent,
             Colors.pink,
           ],
+          child: activeScreen,
         ),
       ),
     );

@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_quiz/home_screen.dart';
-
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key, required this.gradientColors});
-
-  GradientContainer.defaultColors({super.key})
-      : gradientColors = [
-          Colors.indigo,
-          Colors.pink,
-        ];
+  const GradientContainer({
+    super.key,
+    required this.gradientColors,
+    required this.child,
+  });
 
   final List<Color> gradientColors;
+  final Widget child;
 
   @override
   Widget build(context) {
@@ -23,8 +20,8 @@ class GradientContainer extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
       ),
-      child: const Center(
-        child: HomeScreen(),
+      child: Center(
+        child: child,
       ),
     );
   }
