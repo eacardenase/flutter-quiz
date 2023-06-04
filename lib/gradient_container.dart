@@ -5,6 +5,12 @@ import 'package:flutter_quiz/home_screen.dart';
 class GradientContainer extends StatelessWidget {
   const GradientContainer({super.key, required this.gradientColors});
 
+  GradientContainer.defaultColors({super.key})
+      : gradientColors = [
+          Colors.indigo,
+          Colors.pink,
+        ];
+
   final List<Color> gradientColors;
 
   @override

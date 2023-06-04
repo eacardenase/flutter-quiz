@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quiz/gradient_container.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
     home: Scaffold(
-        body: GradientContainer(gradientColors: [
-      Colors.deepPurple,
-      Colors.blueAccent,
-    ])),
+      body: GradientContainer.defaultColors(),
+    ),
   ));
 }
