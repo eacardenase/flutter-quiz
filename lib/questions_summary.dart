@@ -10,36 +10,41 @@ class QuestionsSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: summaryData.map(
-        (summary) {
-          return Row(
-            children: [
-              Text(
-                summary['question_index']!,
-              ),
-              Expanded(
-                child: Column(
-                  children: [
-                    Text(
-                      summary['question']!,
+    return SizedBox(
+      height: 300,
+      child: SingleChildScrollView(
+        child: Column(
+          children: summaryData.map(
+            (summary) {
+              return Row(
+                children: [
+                  Text(
+                    summary['question_index']!,
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          summary['question']!,
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          summary['user_answer']!,
+                        ),
+                        Text(
+                          summary['correct_answer']!,
+                        ),
+                      ],
                     ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      summary['user_answer']!,
-                    ),
-                    Text(
-                      summary['correct_answer']!,
-                    ),
-                  ],
-                ),
-              )
-            ],
-          );
-        },
-      ).toList(),
+                  )
+                ],
+              );
+            },
+          ).toList(),
+        ),
+      ),
     );
   }
 }
