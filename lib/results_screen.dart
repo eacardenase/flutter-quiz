@@ -8,9 +8,11 @@ class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
     super.key,
     required this.chosenAnswers,
+    required this.handleReset,
   });
 
   final List<String> chosenAnswers;
+  final void Function() handleReset;
 
   List<Map<String, String>> getSummaryData() {
     final List<Map<String, String>> summary = [];
@@ -65,7 +67,7 @@ class ResultsScreen extends StatelessWidget {
               height: 30,
             ),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: handleReset,
               style: OutlinedButton.styleFrom(
                 foregroundColor: Colors.white,
                 side: const BorderSide(
