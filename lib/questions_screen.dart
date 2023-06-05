@@ -15,9 +15,21 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
+  var currentQuestionIndex = 0;
+
+  void answerQuestion() {
+    setState(() {
+      if (currentQuestionIndex + 1 < questions.length - 1) {
+        currentQuestionIndex++;
+      } else {
+        currentQuestionIndex = 0;
+      }
+    });
+  }
+
   @override
   Widget build(context) {
-    final currentQuestion = questions[0];
+    final currentQuestion = questions[currentQuestionIndex];
 
     return Container(
       margin: const EdgeInsets.all(
@@ -42,7 +54,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             (answer) {
               return AnswerButton(
                 answerText: answer,
-                onTap: () {},
+                onTap: answerQuestion,
               );
             },
           ),
