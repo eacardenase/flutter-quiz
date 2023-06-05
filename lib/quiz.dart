@@ -26,6 +26,12 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(context) {
+    Widget screenWidget = HomeScreen(switchScreen);
+
+    if (activeScreen == 'questions-screen') {
+      screenWidget = const QuestionsScreen();
+    }
+
     return MaterialApp(
       home: Scaffold(
         body: GradientContainer(
@@ -33,9 +39,7 @@ class _QuizState extends State<Quiz> {
             Colors.indigoAccent,
             Colors.pink,
           ],
-          child: activeScreen == 'home-screen'
-              ? HomeScreen(switchScreen)
-              : const QuestionsScreen(),
+          child: screenWidget,
         ),
       ),
     );
