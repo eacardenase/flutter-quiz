@@ -7,7 +7,10 @@ import 'package:flutter_quiz/data/quiz_questions.dart';
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({
     super.key,
+    required this.onSelectAnswer,
   });
+
+  final void Function(String answer) onSelectAnswer;
 
   @override
   State<QuestionsScreen> createState() {
@@ -18,13 +21,11 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String selectedAnswer) {
+    widget.onSelectAnswer(selectedAnswer);
+
     setState(() {
-      if (currentQuestionIndex + 1 < questions.length - 1) {
-        currentQuestionIndex++;
-      } else {
-        currentQuestionIndex = 0;
-      }
+      currentQuestionIndex++;
     });
   }
 
@@ -56,7 +57,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             (answer) {
               return AnswerButton(
                 answerText: answer,
-                onTap: answerQuestion,
+                onTap: () {
+                  answerQuestion(answer);
+                },
               );
             },
           ),
