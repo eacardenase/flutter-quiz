@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             side: const BorderSide(
               width: 1.8,
               color: Colors.white,
-              strokeAlign: 6,
+              strokeAlign: 4,
             ),
           ),
           icon: const Icon(Icons.arrow_right_alt),
