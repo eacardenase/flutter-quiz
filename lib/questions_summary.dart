@@ -18,21 +18,23 @@ class QuestionsSummary extends StatelessWidget {
               Text(
                 summary['question_index']!,
               ),
-              Column(
-                children: [
-                  Text(
-                    summary['question']!,
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    summary['user_answer']!,
-                  ),
-                  Text(
-                    summary['correct_answer']!,
-                  ),
-                ],
+              Expanded(
+                child: Column(
+                  children: [
+                    Text(
+                      summary['question']!,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      summary['user_answer']!,
+                    ),
+                    Text(
+                      summary['correct_answer']!,
+                    ),
+                  ],
+                ),
               )
             ],
           );
