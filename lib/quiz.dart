@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quiz/gradient_container.dart';
 import 'package:flutter_quiz/home_screen.dart';
 import 'package:flutter_quiz/questions_screen.dart';
+import 'package:flutter_quiz/data/quiz_questions.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({
@@ -27,7 +28,14 @@ class _QuizState extends State<Quiz> {
 
   void selectAnswer(String answer) {
     selectedAnswers.add(answer);
-    print(selectedAnswers);
+
+    if (selectedAnswers.length == questions.length) {
+      setState(() {
+        activeScreen = 'home-screen';
+
+        selectedAnswers.clear();
+      });
+    }
   }
 
   @override
