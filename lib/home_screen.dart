@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen(this.startQuizHandler, {super.key});
+
+  final void Function()? startQuizHandler;
 
   @override
   Widget build(context) {
@@ -27,7 +29,7 @@ class HomeScreen extends StatelessWidget {
           height: 35,
         ),
         OutlinedButton.icon(
-          onPressed: () {},
+          onPressed: startQuizHandler,
           style: OutlinedButton.styleFrom(
             foregroundColor: Colors.white,
             side: const BorderSide(

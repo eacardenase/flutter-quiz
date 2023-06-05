@@ -8,7 +8,7 @@ class GradientContainer extends StatelessWidget {
   });
 
   final List<Color> gradientColors;
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(context) {
