@@ -8,11 +8,11 @@ class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
     super.key,
     required this.chosenAnswers,
-    required this.handleReset,
+    required this.onRestart,
   });
 
   final List<String> chosenAnswers;
-  final void Function() handleReset;
+  final void Function() onRestart;
 
   List<Map<String, String>> getSummaryData() {
     final List<Map<String, String>> summary = [];
@@ -66,8 +66,11 @@ class ResultsScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            OutlinedButton(
-              onPressed: handleReset,
+            OutlinedButton.icon(
+              icon: const Icon(
+                Icons.refresh,
+              ),
+              onPressed: onRestart,
               style: OutlinedButton.styleFrom(
                 foregroundColor: Colors.white,
                 side: const BorderSide(
@@ -76,7 +79,7 @@ class ResultsScreen extends StatelessWidget {
                   strokeAlign: 4,
                 ),
               ),
-              child: Text(
+              label: Text(
                 'Restart Quiz!',
                 style: GoogleFonts.lato(
                   fontSize: 15,

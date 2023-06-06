@@ -27,7 +27,7 @@ class _QuizState extends State<Quiz> {
     });
   }
 
-  void resetQuiz() {
+  void restartQuiz() {
     switchScreen();
     selectedAnswers.clear();
   }
@@ -51,7 +51,7 @@ class _QuizState extends State<Quiz> {
     } else if (activeScreen == 'results-screen') {
       screenWidget = ResultsScreen(
         chosenAnswers: selectedAnswers,
-        handleReset: resetQuiz,
+        onRestart: restartQuiz,
       );
     }
 
